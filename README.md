@@ -45,7 +45,7 @@ Yritäpä uudelleen..
 
 
 Kirjoita luku 4: 4
-Onnisuit! Poistuit silmukasta
+Onnistuit! Poistuit silmukasta
 ```
 
 > [!IMPORTANT]
