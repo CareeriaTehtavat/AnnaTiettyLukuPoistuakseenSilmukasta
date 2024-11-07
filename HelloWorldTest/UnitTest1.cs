@@ -8,7 +8,7 @@ namespace HelloWorldTest
     public class UnitTest1
     {
         [Theory]
-        [InlineData("en", "Et edes antanut lukua", "miksi?", "Et edes antanut lukua", "3", "Yritapa uudelleen", "6", "Yritapa uudelleen", "4", "Onnisuit! Poistuit silmukasta")]
+        [InlineData("en", "Et edes antanut lukua", "miksi?", "Et edes antanut lukua", "3", "Yritapa uudelleen", "6", "Yritapa uudelleen", "4", "Onnistuit! Poistuit silmukasta")]
         [Trait("TestGroup", "InputLoop")]
         public void TestInputLoop_IgnoreSpacesAndSymbols(params string[] inputs)
         {
@@ -31,7 +31,7 @@ namespace HelloWorldTest
         "kirjoita luku 4",
         "et edes antanut lukua",
         "yritapa uudelleen",
-        "onnisuit! poistuit silmukasta"
+        "onnistuit! poistuit silmukasta"
     };
 
             // Ensure the result contains the expected substrings
@@ -49,12 +49,12 @@ namespace HelloWorldTest
             string normalizedLine = Regex.Replace(line, @"\s+", "").ToLower();
             string normalizedExpectedText = Regex.Replace(expectedText, @"\s+", "").ToLower();
 
-            // Create a regex pattern to allow any character for "ä" and "ö"
+            // Create a regex pattern to allow any character for "Ã¤" and "Ã¶"
             string pattern = Regex.Escape(normalizedExpectedText)
-                                  .Replace("ö", ".")  // Allow any character for "ö"
-                                  .Replace("ä", ".") // Allow any character for "ä"
-                                  .Replace("a", ".") // Allow any character for "ä"
-                                  .Replace("o", "."); // Allow any character for "ä"
+                                  .Replace("Ã¶", ".")  // Allow any character for "Ã¶"
+                                  .Replace("Ã¤", ".") // Allow any character for "Ã¤"
+                                  .Replace("a", ".") // Allow any character for "Ã¤"
+                                  .Replace("o", "."); // Allow any character for "Ã¤"
 
             // Check if the line matches the pattern, ignoring case
             return Regex.IsMatch(normalizedLine, pattern, RegexOptions.IgnoreCase);
